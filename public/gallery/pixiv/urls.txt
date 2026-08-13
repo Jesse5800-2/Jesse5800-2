@@ -1,0 +1,6 @@
+# 每行一个图片 URL，支持 jpg/png/webp/avif/gif后缀
+# # 号开头的行为注释，空行会被忽略
+# 示例：
+https://i.pximg.net/img-master/img/2022/12/15/09/31/13/103616721_p0_master1200.jpg
+https://i.pximg.net/img-master/img/2024/06/17/06/35/01/119714659_p0_master1200.jpg
+https://i.pximg.net/img-master/img/2026/01/03/20/21/56/139476242_p0_master1200.jpg

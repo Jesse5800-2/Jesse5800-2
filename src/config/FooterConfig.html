@@ -1,0 +1,74 @@
+<!-- src/config/FooterConfig.html -->
+<div id="mc-footer"></div>
+
+<script>
+  (function() {
+    const container = document.getElementById('mc-footer');
+    if (!container) return;
+
+    // 从外部文本文件读取内容
+    fetch('/footer.txt')
+      .then(response => {
+        if (!response.ok) throw new Error('无法加载 footer.txt');
+        return response.text();
+      })
+      .then(text => {
+        // 按行拆分，过滤掉空行
+        const lines = text.split('\n')
+          .map(line => line.trim())
+          .filter(line => line.length > 0);
+
+        if (lines.length === 0) {
+          container.textContent = '✨ 欢迎来访 ✨';
+          return;
+        }
+
+        // 随机选一行
+        const randomIndex = Math.floor(Math.random() * lines.length);
+        const fullText = lines[randomIndex];
+
+        // 创建打字机容器
+        const typewriterSpan = document.createElement('span');
+        typewriterSpan.className = 'typewriter';
+        container.appendChild(typewriterSpan);
+
+        // 打字机核心逻辑（只打字，不删除不循环）
+        let charIndex = 0;
+
+        function typeEffect() {
+          const displayText = fullText.substring(0, charIndex + 1);
+          typewriterSpan.textContent = displayText;
+          charIndex++;
+
+          if (charIndex < fullText.length) {
+            // 继续打字
+            setTimeout(typeEffect, 100); // 打字速度 100ms
+          }
+          // 打完后停止，不删除、不循环
+        }
+
+        // 开始打字机效果
+        typeEffect();
+      })
+      .catch(error => {
+        console.warn('Footer 文字加载失败:', error);
+        container.textContent = '✨ 欢迎来访 ✨';
+      });
+  })();
+</script>
+
+<style>
+  .typewriter {
+    display: inline-block;
+    font-weight: bold;
+    /* 模拟打字光标 */
+    border-right: 2px solid currentColor;
+    padding-right: 4px;
+    animation: blinkCursor 0.8s step-end infinite;
+  }
+
+  @keyframes blinkCursor {
+    0%, 100% { border-color: currentColor; }
+    50% { border-color: transparent; }
+  }
+</style>
