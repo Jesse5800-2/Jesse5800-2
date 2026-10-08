@@ -5,7 +5,7 @@ export const announcementConfig: AnnouncementConfig = {
 	title: "公告",
 
 	// 公告内容
-	content: "目前并没有新的鸽子...",
+	content: "虽然迟到了很久，但是祝纳兰Kouritsu 生日快乐！09/30",
 
 	// 是否允许用户关闭公告
 	closable: true,
