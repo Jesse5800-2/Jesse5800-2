@@ -79,7 +79,7 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 				name: "森林",
 				artist: "灰澈",
 				url: "/assets/music/forest.mp3",
-				cover: "/assets/music/cover/forest.png",
+				cover: "/assets/music/cover/forest.jpg",
 				lrc: "/assets/music/lrc/forest.lrc",
 			},
 			{
@@ -100,7 +100,7 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 				name: "妄想哀歌",
 				artist: "MIMI / 初音未来 / 可不",
 				url: "/assets/music/mousouaika.mp3",
-				cover: "/assets/music/cover/mousouaika.png",
+				cover: "/assets/music/cover/mousouaika.jpg",
 				lrc: "/assets/music/lrc/mousouaika.lrc",
 			},
 			{
